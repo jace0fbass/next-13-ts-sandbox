@@ -6,10 +6,8 @@ async function getNotesData() {
     if(!notes) {
       throw new Error('No data found.');
     }
-
     return notes.json();
   }
-
   // async function getIdData() {
   //   const notes = await fetch("https://jsonplaceholder.typicode.com/todos") 
   //     if(!notes) {
@@ -28,15 +26,13 @@ async function getNotesData() {
 export default async function Notes() {
 const notes = await getNotesData();
 // const id = await getIdData(); 
-
 // const [notesData, idData] = await Promise.all([notes, id])
-
   return (
     <main className={styles.main}>
         <h1>Notes Page</h1>
       <div className={styles.description}>
         <ul>
-          {notes.map((note, index) => (
+          {notes.map((note: Note, index: number) => (
             <li key={index}>{note?.id} {note?.title}</li>
           ))}
         </ul>
