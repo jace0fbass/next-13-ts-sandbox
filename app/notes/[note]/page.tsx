@@ -16,8 +16,13 @@ async function getNoteData(id: string) {
     completed: string;
   }
 
+
+  // PRE-RENDER ALL ID'S
 export async function generateStaticParams() {
-  return [{note: ['1', 'a']}, {note: ['2', 'b']}]
+  const todos = await fetch('https://jsonplaceholder.typicode.com/todos').then((res) => res.json()) 
+  return todos.map((todo: any) => ({
+    note: todo.id.toString()
+  }))
 }
 
 export default async function Note({params}: {params: {note: string}}) {
