@@ -34,7 +34,7 @@ const notes = await getNotesData();
       <div className={styles.description}>
         <ul>
           {notes.map((note: Note, index: number) => (
-            <li key={index}>{note?.id} {note?.title}</li>
+            <li key={index}>Note {note?.id}: {note?.title}</li>
           ))}
         </ul>
       </div>

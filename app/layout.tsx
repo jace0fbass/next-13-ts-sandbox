@@ -20,8 +20,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <h1>Main Header</h1>
         <Link style={{marginLeft: "30px"}} href={"/notes"}>Notes</Link>
+        <Link style={{marginLeft: "30px"}} href={`/notes/${1}`}>Note 1</Link>
         <Link style={{marginLeft: "30px"}} href={"/dashboard"}>Dashboard</Link>
-        {/* <Link style={{marginLeft: "30px"}} href={`/notes/${3}`}>Note 3</Link> */}
         <Link style={{marginLeft: "30px"}} href={"/notes/search"}>Search</Link>
         {children}
         <h1>Main Footer</h1>
