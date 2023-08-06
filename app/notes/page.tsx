@@ -2,7 +2,8 @@
 import styles from '../page.module.css'
 
 async function getNotesData() {
-  const notes = await fetch("https://jsonplaceholder.typicode.com/todos") 
+  const notes = await fetch("https://jsonplaceholder.typicode.com/todos")
+  // ADD {cache: "no-store"} AFTER URL TO ServerSideRender THE PAGE INSTEAD OF PRE-RENDERING
     if(!notes) {
       throw new Error('No data found.');
     }
